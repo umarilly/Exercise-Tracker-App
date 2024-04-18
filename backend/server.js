@@ -10,7 +10,11 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+/* 
+    mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    useNewUrlParser & useUnifiedTopology are deprecated, so no need to use them
+*/
+mongoose.connect(uri );
 
 const connection = mongoose.connection;
 
