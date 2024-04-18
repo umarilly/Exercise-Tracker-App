@@ -4,6 +4,9 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import mongoose from 'mongoose';
 
+import exerciseRoute from './routes/exercises.mjs';
+import usersRoute from './routes/users.mjs';
+
 const { connect, connection } = mongoose;
 config();
 const app = express();
@@ -15,6 +18,9 @@ connect(uri);
 connection.once('open', () => {
     console.log('MongoDB Database connection is established successfully');
 });
+
+app.use('./exercises',exerciseRoute)
+app.use('/users',usersRoute);
 
 app.use(cors());
 app.use(express.json());
