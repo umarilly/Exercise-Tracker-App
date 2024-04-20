@@ -19,7 +19,7 @@ connection.once('open', () => {
     console.log('MongoDB Database connection is established successfully');
 });
 
-app.use('./exercises',exerciseRoute)
+app.use('/exercises',exerciseRoute)
 app.use('/users',usersRoute);
 
 app.use(cors());
