@@ -60,7 +60,7 @@ router.route('/login').post(async (req, res) => {
 
         const user = await User.findOne({ email });
 
-        if (!user) {
+        if (!user ) {
             return res.status(400).json({ error: 'Invalid email' });
         }
 

@@ -18,6 +18,11 @@ const exerciseSchema = new Schema({
         type: Date,
         require: true
     }
+    ,
+    userId:{
+        type:String,
+        require:true,
+    }
 },{
     timestamps: true,
 })

@@ -2,67 +2,68 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Dashboard = () => {
-    const [exercises, setExercises] = useState([]);
+    
     const [username, setUsername] = useState('');
     const [description, setDescription] = useState('');
     const [duration, setDuration] = useState(0);
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState('');
+
+    const [exercises, setExercises] = useState([]);
     const [editExerciseId, setEditExerciseId] = useState(null);
 
-    const userID = localStorage.getItem('userId');
+    const userId = localStorage.getItem('userId');
 
     useEffect(() => {
-        // Fetch all exercises
-        axios.get('http://localhost:5000/exercises/')
+        getExercises();
+    }, [editExerciseId]);
+
+    const getExercises = () => {
+        axios.get(`http://localhost:5000/exercises/${userId}`)
             .then(response => {
                 setExercises(response.data);
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        const exercise = {
+            username: username,
+            description: description,
+            duration: Number(duration),
+            date: date,
+            userId: userId,
+        };
+
         if (editExerciseId) {
-            // Update exercise
-            const exercise = {
-                username: username,
-                description: description,
-                duration: duration,
-                date: date,
-                userId: userID
-            };
-
             axios.post(`http://localhost:5000/exercises/update/${editExerciseId}`, exercise)
-                .then(res => console.log(res.data));
-
-            // Clear form fields and exit edit mode
-            setUsername('');
-            setDescription('');
-            setDuration(0);
-            setDate(new Date());
-            setEditExerciseId(null);
+                .then(res => {
+                    console.log(res.data);
+                    getExercises(); // Fetch exercises after update
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         } else {
-            // Create exercise
-            const exercise = {
-                username: username,
-                description: description,
-                duration: duration,
-                date: date,
-                userId: userID
-            };
-
             axios.post('http://localhost:5000/exercises/add', exercise)
-                .then(res => console.log(res.data));
-
-            // Clear form fields
-            setUsername('');
-            setDescription('');
-            setDuration(0);
-            setDate(new Date());
+                .then(res => {
+                    console.log(res.data);
+                    getExercises(); // Fetch exercises after add
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         }
+
+        // Clear form fields and exit edit mode
+        setUsername('');
+        setDescription('');
+        setDuration(0);
+        setDate('');
+        setEditExerciseId(null);
     };
 
     const handleEdit = (id, exercise) => {
@@ -74,12 +75,14 @@ const Dashboard = () => {
     };
 
     const handleDelete = (id) => {
-        // Delete exercise
         axios.delete(`http://localhost:5000/exercises/${id}`)
-            .then(res => console.log(res.data));
-
-        // Update exercises state
-        setExercises(exercises.filter(exercise => exercise._id !== id));
+            .then(res => {
+                console.log(res.data);
+                getExercises(); // Fetch exercises after delete
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
 
     return (
