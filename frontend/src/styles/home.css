@@ -1,0 +1,25 @@
+
+/* Home */
+.home {
+    width: 100%;
+    height: 82vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.home-left {
+    border: 2px solid black;
+    width: 45%;
+    height: 65vh;
+
+}
+
+.home-right {
+    border: 2px solid black;
+    width: 45%;
+    height: 65vh;
+    
+}
