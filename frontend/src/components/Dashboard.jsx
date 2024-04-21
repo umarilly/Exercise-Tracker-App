@@ -1,14 +1,15 @@
 
 import React from 'react'
 
-const CreateUser = () => {
+const Dashboard = () => {
     return (
         <>
             <div>
-                This is a Create User Component
+                This is Dashbaord
             </div>
+
         </>
     )
 }
 
-export default CreateUser
+export default Dashboard;

@@ -54,7 +54,7 @@ router.route('/signup').post(async (req, res) => {
 
 router.route('/login').post(async (req, res) => {
 
-    const { email, password } = req.body;
+    const { username, email, password } = req.body;
 
     try {
 
@@ -74,7 +74,7 @@ router.route('/login').post(async (req, res) => {
             expiresIn: '1h',
         });
         
-        res.status(200).json({ token, userId: user._id });
+        res.status(200).json({ token, userId: user._id , username: user.username});
         
     } catch (err) {
         res.status(500).json({ error: 'Internal server error' });
