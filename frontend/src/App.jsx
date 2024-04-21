@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
+import Home from './components/Home';
 
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin';
@@ -23,7 +24,7 @@ function App() {
           <Navigation/>
           <Routes>
 
-            <Route path="/" />
+            <Route path="/" element={< Home />} />
 
             <Route path="/createexercise" element={< CreateExercise />} />
             <Route path="/readeexercise" element={< ReadExercise />} />

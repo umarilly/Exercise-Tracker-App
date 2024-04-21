@@ -1,0 +1,197 @@
+
+/* Main Container */
+
+.sighup-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+.signup-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Main Container - Right Side */
+
+.signup-form {
+    margin: 40px;
+    height: auto;
+    width: 500px;
+    background: rgb(207, 204, 204);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.outside-form-input {
+    display: flex;
+    flex-direction: row;
+    background-color: #e7e7e7;
+}
+
+.img-box {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #e7e7e7;
+    outline: none;
+}
+
+.form-button-signup {
+    padding: 10px 20px;
+    background-color: #07689f;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-button-signup:hover {
+    background-color: #54b2e8;
+}
+
+.outer-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Extra-out-google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.text-for-already-account {
+    margin-top: 10px;
+}
+
+.already-account {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.already-account-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #07689f;
+    color: white;
+    width: 100%;
+    height: auto;
+}
+
+.already-account :hover {
+    background-color: #54b2e8;
+}
+
+/*   
+    Media Queries
+*/
+
+@media screen and (max-width: 700px) {
+    .signup-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e7e7e7;
+        flex-direction: column;
+    }
+    .signup-container-right {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        width: 90%;
+        border-radius: 45px 45px 45px 45px;
+        height: auto;
+    }
+
+    .signup-container-right-sub {
+        width: 90%;
+        height: auto;
+    }
+
+    .signup-heading {
+        margin: 50px 0px 50px 0px;
+    }
+
+    .pre-btn-signup button {
+        width: 100%;
+    }
+
+    .div-for-google-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .google-button {
+        width: 90%;
+    }
+
+    .text-for-already-account {
+        margin: 30px;
+    }
+
+    .already-account {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .already-account button {
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #538aab;
+        color: white;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        width: 100%;
+        height: auto;
+    }
+}
