@@ -144,7 +144,7 @@ const UserSignup = () => {
 
                                     <div className="pre-btn-login">
                                         <button type="submit" className="form-button-login">
-                                            Log In
+                                            Sign Up
                                         </button>
                                     </div>
                                 </form>
