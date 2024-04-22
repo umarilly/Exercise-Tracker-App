@@ -1,7 +1,5 @@
 
-/* Main Container */
-
-.sighup-heading {
+.login-heading {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +7,7 @@
     margin-bottom: -20px;
 }
 
-.signup-container {
+.login-container {
     width: 100%;
     height: auto;
     display: flex;
@@ -18,56 +16,80 @@
     flex-direction: column;
 }
 
-/* Main Container - Right Side */
-
-.signup-form {
-    margin: 40px;
+.login-container-box2 {
+    width: 30%;
     height: auto;
-    width: 500px;
-    background: rgb(207, 204, 204);
-    border-radius: 20px;
-    padding: 40px;
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 30px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    padding-bottom: 30px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.login-container-box2-sub {
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
-.form-label {
+.login-container-box2-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.form-label-login {
     display: flex;
     flex-direction: column;
     font-size: 15px;
     margin-bottom: 10px;
 }
 
-.outside-form-input {
+.outer-input-class {
     display: flex;
     flex-direction: row;
     background-color: #e7e7e7;
 }
 
-.img-box {
+.img-box-login {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
     margin: 15px;
 }
 
-.form-input {
+.form-input-login {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     background: #e7e7e7;
     outline: none;
 }
 
-.form-button-signup {
+.pre-btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button-login {
     padding: 10px 20px;
     background-color: #07689f;
     color: #fff;
-    width: 100%;
+    width:  100%;
     height: auto;
     border: none;
     border-radius: 5px;
@@ -76,122 +98,43 @@
     transition: background-color 0.3s;
 }
 
-.form-button-signup:hover {
+.form-button-login:hover {
     background-color: #54b2e8;
 }
 
-.outer-form {
+.no-account {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
 }
 
-.Extra-out-google-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.text-for-already-account {
-    margin-top: 10px;
-}
-
-.already-account {
-    width: 100%;
+.already-account-login {
+    width: 50%;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.already-account-button {
-    padding: 12px 20px;
-    font-size: 16px;
+.already-account-login button {
+    padding: 10px 20px;
+    background-color: #07689f;
+    color: #fff;
+    width:  100%;
+    height: auto;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #07689f;
-    color: white;
-    width: 100%;
-    height: auto;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.already-account :hover {
+.already-account-login button:hover {
     background-color: #54b2e8;
 }
 
-/*   
-    Media Queries
-*/
-
-@media screen and (max-width: 700px) {
-    .signup-container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #e7e7e7;
-        flex-direction: column;
-    }
-    .signup-container-right {
-        margin-top: 20px;
-        margin-bottom: 40px;
+@media screen and (max-width: 700px) {   
+    .login-container-box2 {
         width: 90%;
-        border-radius: 45px 45px 45px 45px;
-        height: auto;
-    }
-
-    .signup-container-right-sub {
-        width: 90%;
-        height: auto;
-    }
-
-    .signup-heading {
-        margin: 50px 0px 50px 0px;
-    }
-
-    .pre-btn-signup button {
-        width: 100%;
-    }
-
-    .div-for-google-btn {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .google-button {
-        width: 90%;
-    }
-
-    .text-for-already-account {
-        margin: 30px;
-    }
-
-    .already-account {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: auto;
-    }
-
-    .already-account button {
-        padding: 12px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #538aab;
-        color: white;
-        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-        width: 100%;
         height: auto;
     }
 }

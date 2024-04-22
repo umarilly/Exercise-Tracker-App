@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import '../styles/signup.css';
 import Lock from '../images/lock.png';
 import Message from '../images/message.png';
@@ -43,116 +43,127 @@ const UserSignup = () => {
 
     return (
         <>
-            <div className='sighup-heading' > 
-                <div><h2> Sign Up </h2></div> 
+            <div className='login-heading' >
+                <div><h2> Sign Up </h2></div>
             </div>
+            <div>
+                <div className="login-container">
 
-            <div className='signup-container' >
+                    <div className="login-container-box2">
+                        <div className="login-container-box2-sub">
 
+                            <div className="login-container-box2-form">
+                                <form onSubmit={handleSubmit}>
+                                    <div className="form-group-login">
+                                        <label htmlFor="input1" className="form-label-login">
+                                            Name
+                                        </label>
+                                        <div className="outer-input-class">
+                                            <div className="img-box-login">
+                                                <img src={Profile} alt="" />
+                                            </div>
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                value={formData.username}
+                                                className="form-input-login"
+                                                id="input1"
+                                                onChange={handleChange}
+                                                placeholder="Name"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="form-group-login">
+                                        <label htmlFor="input2" className="form-label-login" style={{ marginTop: '10px' }}>
+                                            Email
+                                        </label>
+                                        <div className="outer-input-class">
+                                            <div className="img-box-login">
+                                                <img src={Message} alt="" />
+                                            </div>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                className="form-input-login"
+                                                id="input2"
+                                                onChange={handleChange}
+                                                placeholder="Email"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="form-group-login">
+                                        <label htmlFor="input3" className="form-label-login" style={{ marginTop: '10px' }}>
+                                            Password
+                                        </label>
+                                        <div className="outer-input-class">
+                                            <div className="img-box-login">
+                                                <img src={Lock} alt="" />
+                                            </div>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                value={formData.password}
+                                                className="form-input-login"
+                                                id="input3"
+                                                placeholder="Password"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
 
-                <div className='signup-form' >
+                                    <div className="form-group-login">
+                                        <label htmlFor="input4" className="form-label-login" style={{ marginTop: '10px' }}>
+                                            Confirm Password
+                                        </label>
+                                        <div className="outer-input-class">
+                                            <div className="img-box-login">
+                                                <img src={Lock} alt="" />
+                                            </div>
+                                            <input
+                                                type="password"
+                                                name="confirmPassword"
+                                                value={formData.confirmPassword}
+                                                className="form-input-login"
+                                                id="input4"
+                                                placeholder="Password Again"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+                                    </div>
 
-                    <form onSubmit={handleSubmit}>
+                                    <div>
+                                        <div>
+                                            <h6 style={{ color: 'black', marginBottom: '15px' , marginTop: '15px' , textAlign: 'center' }} > {errorMsg} </h6>
+                                        </div>
+                                    </div>
 
-                        <div className='form-group'>
-                            <label htmlFor='input1' className='form-label'>Name</label>
-                            <div className='outside-form-input'>
-                                <div className='img-box' > <img src={Profile} alt="" /> </div>
-                                <input
-                                    className='form-input'
-                                    style={{ border: '0px' }}
-                                    id='input1'
-                                    type='text'
-                                    name='username'
-                                    placeholder='Name'
-                                    value={formData.username}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                    <div className="pre-btn-login">
+                                        <button type="submit" className="form-button-login">
+                                            Log In
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
 
-                        <div className='form-group'>
-                            <label htmlFor='input2' className='form-label'>Email</label>
-                            <div className='outside-form-input'>
-                                <div className='img-box' > <img src={Message} alt="" /> </div>
-                                <input
-                                    className='form-input'
-                                    style={{ border: '0px' }}
-                                    id='input2'
-                                    type='email'
-                                    name='email'
-                                    placeholder='Email'
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                />
+
+                            <div className="no-account">
+                                <div>
+                                    <p> Already Have an Account ? </p>
+                                </div>
+                                <div className="already-account-login">
+                                    <RouterLink to="/login">
+                                        <button> Log In </button>
+                                    </RouterLink>
+                                </div>
                             </div>
-                        </div>
 
-                        <div className='form-group'>
-                            <label htmlFor='input3' className='form-label'>Password</label>
-                            <div className='outside-form-input'>
-                                <div className='img-box' > <img src={Lock} alt="" /> </div>
-                                <input
-                                    className='form-input'
-                                    style={{ border: '0px' }}
-                                    id='input3'
-                                    type='password'
-                                    name='password'
-                                    placeholder='Password'
-                                    value={formData.password}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
-
-                        <div className='form-group'>
-                            <label htmlFor='input4' className='form-label'>Re-Write Password</label>
-                            <div className='outside-form-input'>
-                                <div className='img-box' > <img src={Lock} alt="" /> </div>
-                                <input
-                                    className='form-input'
-                                    style={{ border: '0px' }}
-                                    id='input4'
-                                    type='password'
-                                    name='confirmPassword'
-                                    placeholder='Password Again'
-                                    value={formData.confirmPassword}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <div>
-                                <h4 style={{ color: 'red', marginBottom: '20px' }}  > {errorMsg} </h4>
-                            </div>
-                        </div>
-
-                        <div className='pre-btn-signup' >
-                            <button
-                                type='submit'
-                                className='form-button-signup'
-                            > Sign Up
-                            </button>
-                        </div>
-                    </form>
-
-                    <div className='outer-form' >
-                        <div className='Extra-out-google-btn' >
-                            <p className='text-for-already-account'> Already have an account ? </p>
-                        </div>
-                        <div className="already-account" >
-                            <RouterLink to="/login">
-                                <button className='already-account-button'>
-                                    Log In
-                                </button>
-                            </RouterLink>
                         </div>
                     </div>
-
-
                 </div>
 
             </div>
@@ -161,8 +172,3 @@ const UserSignup = () => {
 }
 
 export default UserSignup;
-
-
-
-
-

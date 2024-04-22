@@ -22,6 +22,10 @@ const Navigation = () => {
         navigation('/')
     };
 
+    const backToHome = () => {
+        navigation('/');
+    }
+
     return (
         <>
             <div>
@@ -29,7 +33,7 @@ const Navigation = () => {
 
                     <div className='custom-navbar-inside'>
 
-                        <div className='custom-navbar-brand' >
+                        <div style={{ cursor : 'pointer' }} onClick={backToHome} className='custom-navbar-brand' >
                             <img className='brand-logo'  src={Logo} alt="" />
                         </div>
 
@@ -53,10 +57,10 @@ const Navigation = () => {
                                     ) : (
                                         <>
                                             <Nav.Link href="/signup">
-                                                <button className='btn btn-primary'> Sign In </button>
+                                                <button className='btn btn-primary'> Sign Up </button>
                                             </Nav.Link>
                                             <Nav.Link href="/login">
-                                                <button className='btn btn-primary' > Login </button>
+                                                <button className='btn btn-primary' > Log In </button>
                                             </Nav.Link>
                                         </>
                                     )}

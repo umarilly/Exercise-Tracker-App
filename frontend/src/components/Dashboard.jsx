@@ -4,6 +4,7 @@ import './../styles/dashboard.css';
 import { TextField, Button, Grid, Box, Typography, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom'; 
 
 
 const Dashboard = () => {
@@ -19,6 +20,8 @@ const Dashboard = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
     const userId = localStorage.getItem('userId');
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         readExercises();
@@ -111,6 +114,18 @@ const Dashboard = () => {
     const handleDelete = (id) => {
         deleteExercise(id);
     };
+
+    const navigateToLogin = () => {
+        navigate('/login')
+    }
+
+    if (!userId) {
+        return <div style={{ display: 'flex' , justifyContent : 'center' , alignItems : 'center' , marginTop : '50px' }} >
+                    <div>
+                        <button onClick={navigateToLogin} className='btn btn-danger' > Please Login </button>
+                    </div>
+                </div>;
+    }
 
     return (
         <>
@@ -219,7 +234,7 @@ const Dashboard = () => {
                         </Grid>
                     </Grid>
                 </div>
-                
+
             </div>
 
         </>
