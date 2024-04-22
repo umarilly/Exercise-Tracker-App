@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import { useNavigate } from 'react-router-dom';
+import Logo from '../images/logo.png'
 
 import '../styles/navigation.css'
 
@@ -24,12 +25,12 @@ const Navigation = () => {
     return (
         <>
             <div>
-                <Navbar expand="lg" className="custom-navbar" bg="dark" data-bs-theme="dark">
+                <Navbar expand="lg" className="custom-navbar">
 
                     <div className='custom-navbar-inside'>
 
                         <div className='custom-navbar-brand' >
-                            <Navbar.Brand href="/"> Exercise Tracker </Navbar.Brand>
+                            <img className='brand-logo'  src={Logo} alt="" />
                         </div>
 
                         <div className='custom-navbar-toggle' >
