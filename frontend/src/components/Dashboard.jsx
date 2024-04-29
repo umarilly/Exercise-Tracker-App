@@ -203,7 +203,7 @@ const Dashboard = () => {
                 <div className='dashboard-results' >
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <List sx={{ backgroundColor: '#f5f5f5', borderRadius: 8 }}>
+                            <List sx={{ borderRadius: 8 }}>
                                 {exercises.map(exercise => (
                                     <ListItem key={exercise._id} sx={{ border: '1px solid #ccc', borderRadius: 4, marginBottom: 2 }}>
                                         <ListItemText
